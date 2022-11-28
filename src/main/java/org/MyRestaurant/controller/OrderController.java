@@ -24,22 +24,24 @@ import org.MyRestaurant.utils.MenuImporter;
 public class OrderController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Menu menu = new MenuImporter().importMenu("/menu_items.txt");
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public OrderController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List <Product> productList = new ArrayList<Product>();
+	public OrderController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		List<Product> productList = new ArrayList<Product>();
 		HashMap<Integer, Product> menuItems = menu.getMenuItems();
-		for(Entry<Integer,Product> productEntry : menuItems.entrySet()) {
+		for (Entry<Integer, Product> productEntry : menuItems.entrySet()) {
 			productList.add(productEntry.getValue());
 		}
 		request.setAttribute("menuList", productList);
@@ -47,17 +49,20 @@ public class OrderController extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String name = request.getParameter("name");
 		String adress = request.getParameter("address");
-		String telNumber = request.getParameter("telNumber");
-		Client client = new Client(name,adress,telNumber);
-		String [] orderList = request.getParameterValues("orderItems");
-		List <Product> productList = new ArrayList<Product>();
+		String telNumber = request.getParameter("phoneNumber");
+		String email = request.getParameter("email");
+		Client client = new Client(name, adress, telNumber, email);
+		String[] orderList = request.getParameterValues("orderItems");
+		List<Product> productList = new ArrayList<Product>();
 		HashMap<Integer, Product> menuItems = menu.getMenuItems();
-		for(int i = 0 ; i<orderList.length; i++) {
+		for (int i = 0; i < orderList.length; i++) {
 			productList.add(menuItems.get(Integer.valueOf(orderList[i])));
 		}
 		double totalSum = calculateSum(productList);
@@ -70,7 +75,7 @@ public class OrderController extends HttpServlet {
 
 	private double calculateSum(List<Product> productList) {
 		double sum = 0;
-		for(Product product : productList) {
+		for (Product product : productList) {
 			sum += product.getPrice();
 		}
 		return sum;

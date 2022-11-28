@@ -12,15 +12,14 @@
 				<input type="text" name="name" placeholder="Full Name " />
 			</div>
 			<div>
-				<input type="text" name="celNumber" placeholder="Phone number" />
+				<input type="text" name="phoneNumber" placeholder="Phone number" />
 			</div>
 			<div>
-				<input type="email" placeholder="Email" />
+				<input type="email" name="email" placeholder="Email" />
 			</div>
-
-			<div class="heading_container">
-				<h3>Pick from the menu</h3>
-			</div>
+				<div class="heading_container">
+					<h5>Pick from the menu</h5>
+				</div>
 			<%
 			List<Product> productList = (List) (request.getAttribute("menuList"));
 			for (int i = 0; i < productList.size(); i++) {

@@ -19,7 +19,7 @@
 				List<Product> productList = (List) (request.getAttribute("menuList"));
 				for (int i = 0; i < productList.size(); i++) {
 					out.print("<input type=\"checkbox\" name=\"orderItems\" value = \"" + productList.get(i).getProductId() + "\"/>"
-					+ productList.get(i).getName() +" ¦ "+productList.get(i).getPrice() +" EUR"+ "<br />");
+					+ productList.get(i).getName() + " ¦ " + productList.get(i).getPrice() + " EUR" + "<br />");
 				}
 				%>
 				<input type="submit" />

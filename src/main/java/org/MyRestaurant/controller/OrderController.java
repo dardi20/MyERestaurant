@@ -43,7 +43,7 @@ public class OrderController extends HttpServlet {
 			productList.add(productEntry.getValue());
 		}
 		request.setAttribute("menuList", productList);
-		request.getRequestDispatcher("order.jsp").forward(request, response);
+		request.getRequestDispatcher("orderPretty.jsp").forward(request, response);
 	}
 
 	/**

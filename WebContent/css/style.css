@@ -4,7 +4,9 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
-
+.checkboxes{
+	vertical-align: middle;
+}
 .layout_padding {
   padding: 90px 0;
 }
@@ -768,7 +770,7 @@ a:focus {
 }
 
 .contact_section input {
-  width: 100%;
+ 
   border: none;
   height: 50px;
   margin-bottom: 25px;

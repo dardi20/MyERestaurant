@@ -116,7 +116,7 @@
 
     <!-- end info_section -->
 
-  </div>
+  
 
   <!-- footer section -->
   <footer class="container-fluid footer_section">

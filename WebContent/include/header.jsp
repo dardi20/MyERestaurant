@@ -43,9 +43,7 @@
 
 <body>
 
-  <div class="main_body_content">
 
-    <div class="hero_area">
       <!-- header section strats -->
       <header class="header_section">
         <div class="container-fluid">

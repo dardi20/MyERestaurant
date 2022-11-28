@@ -17,6 +17,7 @@
 				<%
 				List<Product> productList = (List)(request.getAttribute("productList"));
 				for (int i = 0; i < productList.size(); i++) {
+
 					out.print("<tr>");
 					out.print("<td>" + productList.get(i).getProductId() + "</td>");
 					out.print("<td>" + productList.get(i).getName() + "</td>");

@@ -5,12 +5,14 @@ import java.util.HashMap;
 import org.MyRestaurant.entity.product.Drink;
 import org.MyRestaurant.entity.product.Meal;
 import org.MyRestaurant.entity.product.Product;
+import org.MyRestaurant.utils.MenuImporter;
 
 public class Menu {
 	
 	private HashMap<Integer, Product> menuItems = new HashMap<Integer, Product>();
-	
+	MenuImporter menuImporter = new MenuImporter();
 	public Menu() {
+//		this.menuItems = menuImporter.importMenu("/menu_items.txt").getMenuItems();
 //		initializeMenuItems();
 		}
 
